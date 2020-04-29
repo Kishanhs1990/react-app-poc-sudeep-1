@@ -1,0 +1,39 @@
+// sass-lint:disable no-vendor-prefixes
+
+$font-primary: 'Montserrat', 'arial', 'sanserif' !default;
+
+@mixin -font-primary {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-primary;
+  font-weight: 500;
+}
+
+@mixin -font-secondary {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-primary;
+  font-weight: 400;
+}
+
+@mixin -font-bold {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-primary;
+  font-weight: 700;
+}
+
+@mixin -font-bold-italic {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-primary;
+  font-style: italic;
+  font-weight: 700;
+}
+
+@mixin -font-bolder {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-primary;
+  font-weight: 800;
+}

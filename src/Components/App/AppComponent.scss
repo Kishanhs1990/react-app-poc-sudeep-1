@@ -1,0 +1,85 @@
+@import '../../Styles/Base/Other/Resets';
+@import '../../Styles/Base/Other/Loader';
+@import '../../Styles/Themes/default';
+
+body {
+  background: $app-off-bkg;
+}
+
+.app {
+  @include -font-primary;
+  font-size: rem(16px);
+  text-align: center;
+
+  .verify-form {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
+  &.loader-active {
+    filter: blur(2px);
+    height: 100vh;
+  }
+}
+
+.input-row {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+
+  .error {
+    color: $app-error;
+    display: flex;
+    flex-basis: 100%;
+    font-size: rem(12px);
+    justify-content: space-around;
+  }
+}
+
+.input-col {
+  display: flex;
+  flex: 1;
+  line-height: 1.2;
+  padding: 10px;
+
+  label {
+    line-height: 30px;
+    min-height: 30px;
+    text-align: left;
+  }
+
+  > span {
+    text-align: left;
+  }
+
+  input {
+    &[type='text'] {
+      background-color: $app-input-bkg;
+      background-image: none;
+      border: 1px solid $app-bdr-grey;
+      border-radius: 1px;
+      color: inherit;
+      display: block;
+      font-size: 14px;
+      padding: 6px 12px;
+      transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+      width: 100%;
+    }
+  }
+
+  &:nth-child(even) {
+    justify-content: flex-end;
+  }
+}
+
+.justify-left {
+  justify-content: flex-start;
+}
+
+.justify-right {
+  justify-content: flex-end;
+}
+
+.justify-space-between {
+  justify-content: space-between !important; // sass-lint:disable-line no-important
+}

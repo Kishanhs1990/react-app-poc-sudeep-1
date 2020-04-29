@@ -1,0 +1,61 @@
+@import '../../Styles/Themes/default';
+
+$footer-width: 100% !default;
+
+$footer-container-inner-spacing-vertical: 0 !default;
+$footer-container-inner-spacing-horizontal: 7% !default;
+$footer-container-max-width: rem(1376px) !default;
+$footer-container-spacing-vertical: 0 !default;
+
+$footer-navigation-width: 100% !default;
+$footer-navigation-height: rem(47px) !default;
+
+.footer {
+  @include -font-secondary;
+  background: $app-ftr-bkg;
+  width: $footer-width;
+
+  .container {
+    margin: $footer-container-spacing-vertical auto;
+    max-width: $footer-container-max-width;
+    padding: $footer-container-inner-spacing-vertical $footer-container-inner-spacing-horizontal;
+
+    .content {
+      align-items: center;
+      display: flex;
+      height: 9vh;
+      justify-content: space-around;
+      margin: 0 auto;
+      padding: 1vh 0;
+      // width: 80%;
+      @include breakpoint('xxs', 's') {
+        height: 13vh;
+        padding: 2vh 0;
+      }
+    }
+
+    .small-footer-text {
+      color: $app-ftr-txt;
+      font-size: rem(12px);
+      text-decoration: none;
+
+      a {
+        color: $app-ftr-txt;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+          color: $app-bdr-reg;
+        }
+      }
+    }
+  }
+
+  .navigation {
+    align-items: flex-end;
+    display: flex;
+    height: $footer-navigation-height;
+    justify-content: center;
+    width: $footer-navigation-width;
+  }
+}

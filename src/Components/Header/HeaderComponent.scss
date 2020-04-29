@@ -1,0 +1,60 @@
+@import '../../Styles/Themes/default';
+
+$header-width: 100% !default;
+
+$header-container-inner-spacing-vertical: 0 !default;
+$header-container-inner-spacing-horizontal: 7% !default;
+$header-container-max-width: rem(1376px) !default;
+$header-container-spacing-vertical: 0 !default;
+
+$header-navigation-width: 100% !default;
+$header-navigation-height: rem(57px) !default;
+
+.header {
+  @include -font-bold;
+  background-color: $app-hdr-bkg;
+  margin: auto;
+  width: $header-width;
+
+  .container {
+    margin: $header-container-spacing-vertical auto;
+    max-width: $header-container-max-width;
+    padding: $header-container-inner-spacing-vertical $header-container-inner-spacing-horizontal;
+
+    .content {
+      align-items: center;
+      display: flex;
+      height: 7vh;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 1vh 0;
+      // width: 80%;
+      @include breakpoint('xxs', 's') {
+        height: 15vh;
+        padding: 2vh 0;
+      }
+    }
+
+    .big-header-text {
+      font-size: rem(30px);
+
+      a {
+        color: $app-hdr-txt;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  .navigation {
+    align-items: flex-end;
+    display: flex;
+    height: $header-navigation-height;
+    justify-content: center;
+    width: $header-navigation-width;
+  }
+}

@@ -1,0 +1,14 @@
+query ListAllLanguages {
+  languages {
+    name
+    code
+  }
+}
+
+query LanguageDetails {
+  language(code: "BR") {
+    name
+    native
+    rtl
+  }
+}

@@ -1,0 +1,25 @@
+@import 'Font.setup';
+@import 'Font.mixin';
+@import 'RemConvertor.mixin';
+
+.-font {
+  &-primary {
+    @include -font-primary;
+  }
+
+  &-secondary {
+    @include -font-secondary;
+  }
+
+  &-bold {
+    @include -font-bold;
+  }
+
+  &-bold-italic {
+    @include -font-bold-italic;
+  }
+
+  &-bolder {
+    @include -font-bolder;
+  }
+}

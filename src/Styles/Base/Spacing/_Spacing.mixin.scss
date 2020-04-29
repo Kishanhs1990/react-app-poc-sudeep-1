@@ -1,0 +1,126 @@
+// sass-lint:disable empty-args
+@import 'Spacing.setup';
+@import '../Other/Breakpoint';
+
+@mixin -spacing-static-a() {
+  margin-top: $spacing-static-a;
+}
+@mixin -spacing-static-b() {
+  margin-top: $spacing-static-b;
+}
+@mixin -spacing-static-c() {
+  margin-top: $spacing-static-c;
+}
+@mixin -spacing-static-d() {
+  margin-top: $spacing-static-d;
+}
+@mixin -spacing-static-e() {
+  margin-top: $spacing-static-e;
+}
+@mixin -spacing-static-f() {
+  margin-top: $spacing-static-f;
+}
+@mixin -spacing-static-g() {
+  margin-top: $spacing-static-g;
+}
+
+@mixin -spacing-a() {
+  margin-top: 1.5rem;
+  @include breakpoint('s') {
+    margin-top: 1.75rem;
+  }
+  @include breakpoint('l') {
+    margin-top: 2.25rem;
+  }
+}
+
+@mixin -spacing-b() {
+  margin-top: 1.5rem;
+  @include breakpoint('l') {
+    margin-top: 1.875rem;
+  }
+}
+
+@mixin -spacing-c() {
+  margin-top: 1.125rem;
+  @include breakpoint('m') {
+    margin-top: 1.5rem;
+  }
+  @include breakpoint('l') {
+    margin-top: 1.875rem;
+  }
+}
+
+@mixin -spacing-d() {
+  margin-top: 1.125rem;
+  @include breakpoint('s') {
+    margin-top: 1.5rem;
+  }
+}
+
+@mixin -spacing-e() {
+  margin-top: 1.125rem;
+  @include breakpoint('s') {
+    margin-top: 1.5rem;
+  }
+  @include breakpoint('l') {
+    margin-top: 1.125rem;
+  }
+}
+
+@mixin -spacing-f() {
+  margin-top: 0.75rem;
+  @include breakpoint('s') {
+    margin-top: 1.125rem;
+  }
+}
+
+@mixin -spacing-g() {
+  margin-top: 0.75rem;
+  @include breakpoint('s') {
+    margin-top: 3.35rem;
+  }
+}
+
+@mixin -spacing-zero() {
+  margin-top: 0;
+}
+
+@mixin -spacing-inner-a() {
+  padding: $spacing-inner-a;
+  @include breakpoint('s') {
+    padding: $spacing-inner-a-s;
+  }
+  @include breakpoint('m') {
+    padding: $spacing-inner-a-m;
+  }
+  @include breakpoint('l') {
+    padding: $spacing-inner-a-l;
+  }
+}
+
+@mixin -spacing-inner-b() {
+  padding: $spacing-inner-b;
+  @include breakpoint('s') {
+    padding: $spacing-inner-b-s;
+  }
+  @include breakpoint('m') {
+    padding: $spacing-inner-b-m;
+  }
+  @include breakpoint('l') {
+    padding: $spacing-inner-b-l;
+  }
+}
+
+@mixin -spacing-inner-c() {
+  padding: $spacing-inner-c;
+  @include breakpoint('s') {
+    padding: $spacing-inner-c-s;
+  }
+  @include breakpoint('m') {
+    padding: $spacing-inner-c-m;
+  }
+  @include breakpoint('l') {
+    padding: $spacing-inner-c-l;
+  }
+}

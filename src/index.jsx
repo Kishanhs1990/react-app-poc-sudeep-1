@@ -1,16 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ConnectedRouter as Router } from 'connected-react-router';
+import { Provider } from 'react-redux';
+
+import * as sw from './Services/serviceWorker';
 import AppComponent from './Components/App/AppComponent';
-import * as serviceWorker from './Services/ServiceWorker/serviceWorker';
+import configureStore from './Store/ConfigureStore';
+// import configureWebFontService from './Services/WebFontService';
+
+const { store, history } = configureStore();
+
+// eslint-disable-next-line no-console
+// console.log(`${process.env.PROJECT_VERSION}:${process.env.REACT_APP_ENV}`);
+
+// if (process.env.REACT_APP_ENV === 'Development') {
+// configureWebFontService();
+// }
+
+// Handling service worker registration
+sw.register();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <AppComponent />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <Router history={history}>
+      <AppComponent />
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register();

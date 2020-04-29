@@ -1,0 +1,55 @@
+@import '../Font/RemConvertor.mixin';
+@import './Animation';
+
+$loader-spinner-dimension: rem(60px) !default;
+$loader-spinner-dimension-tall: 100% !default;
+$loader-spinner-spacing-vertical: rem(-30px) !default;
+$loader-spinner-spacing-horizontal: rem(-30px) !default;
+$loader-spinner-position-vertical: 50% !default;
+$loader-spinner-position-horizontal: 50% !default;
+$loader-spinner-animation-name: animation-rotate-360 !default;
+$loader-spinner-animation-delay: 1.75s !default;
+$loader-spinner-animation-duration: infinite !default;
+$loader-spinner-animation-type: linear !default;
+$loader-box-alt-spinner-resource: $public-path + 'tail-spin.svg' !default;
+
+.loader-overlay {
+  height: 100%;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  @include breakpoint('xxxl') {
+    width: 120rem;
+  }
+}
+
+.loader-box {
+  height: $loader-spinner-dimension-tall;
+  min-height: $loader-spinner-dimension;
+  min-width: $loader-spinner-dimension;
+  position: relative;
+
+  &::after {
+    @include animation(
+      $loader-spinner-animation-name,
+      $loader-spinner-animation-delay,
+      $loader-spinner-animation-duration,
+      $loader-spinner-animation-type
+    );
+
+    background-image: url($loader-box-alt-spinner-resource);
+    background-position: center center;
+    background-repeat: no-repeat;
+    content: '';
+    display: block;
+    height: $loader-spinner-dimension;
+    left: $loader-spinner-position-horizontal;
+    margin-left: $loader-spinner-spacing-horizontal;
+    margin-top: $loader-spinner-spacing-vertical;
+    position: absolute;
+    top: $loader-spinner-position-vertical;
+    width: $loader-spinner-dimension;
+  }
+}

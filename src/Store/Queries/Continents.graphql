@@ -1,0 +1,20 @@
+query ListAllContinents {
+  continents {
+    name
+    code
+    countries {
+      name
+      code
+    }
+  }
+}
+
+query ContinentDetails($code: String!) {
+  continent(code: $code) {
+    name
+    countries {
+      name
+      code
+    }
+  }
+}

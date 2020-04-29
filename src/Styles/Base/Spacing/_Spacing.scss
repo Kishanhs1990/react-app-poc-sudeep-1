@@ -1,0 +1,100 @@
+@import 'Spacing.mixin';
+@import '../Other/Breakpoint';
+
+.-spacing {
+  &-static-a {
+    @include -spacing-static-a;
+  }
+
+  &-static-b {
+    @include -spacing-static-b;
+  }
+
+  &-static-c {
+    @include -spacing-static-c;
+  }
+
+  &-static-d {
+    @include -spacing-static-d;
+  }
+
+  &-static-e {
+    @include -spacing-static-e;
+  }
+
+  &-static-f {
+    @include -spacing-static-f;
+  }
+
+  &-static-g {
+    @include -spacing-static-g;
+  }
+
+  &-a {
+    @include -spacing-a;
+  }
+
+  &-b {
+    @include -spacing-b;
+  }
+
+  &-c {
+    @include -spacing-c;
+  }
+
+  &-d {
+    @include -spacing-d;
+  }
+
+  &-e {
+    @include -spacing-e;
+  }
+
+  &-f {
+    @include -spacing-f;
+  }
+
+  &-g {
+    @include -spacing-g;
+  }
+
+  &-zero {
+    @include -spacing-zero;
+
+    &-xs {
+      @include breakpoint('xs') {
+        @include -spacing-zero;
+      }
+    }
+
+    &-s {
+      @include breakpoint('s') {
+        @include -spacing-zero;
+      }
+    }
+
+    &-m {
+      @include breakpoint('m') {
+        @include -spacing-zero;
+      }
+    }
+
+    &-l {
+      @include breakpoint('l') {
+        @include -spacing-zero;
+      }
+    }
+  }
+
+  &-inner-a {
+    @include -spacing-inner-a;
+  }
+
+  &-inner-b {
+    @include -spacing-inner-b;
+  }
+
+  &-inner-c {
+    @include -spacing-inner-c;
+  }
+}

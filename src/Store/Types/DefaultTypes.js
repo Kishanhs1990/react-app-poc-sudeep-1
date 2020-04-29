@@ -1,0 +1,4 @@
+export const SUCCESS_DEFAULT = 'SUCCESS_DEFAULT';
+export const FAILURE_DEFAULT = 'FAILURE_DEFAULT';
+export const APOLLO_CLIENT = 'APOLLO';
+export const HTTP_CLIENT = 'APOLLO';

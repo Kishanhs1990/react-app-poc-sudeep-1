@@ -1,0 +1,22 @@
+@import '../Base/Default';
+
+$app-bkg: $thunder;
+$app-txt: $white;
+$app-bdr-grey: $grey;
+$app-bdr-reg: $buttercup;
+$app-hdr-bkg: $hot-cinnamon;
+$app-hdr-txt: $white;
+$app-ftr-bkg: $thunder;
+$app-ftr-txt: $white;
+$app-off-bkg: $mine-shaft;
+$app-btn-bkg: $blue;
+$app-btn-txt: $white;
+$app-input-bkg: $white;
+$app-error: $red;
+
+$app-green-overlay: rgba(40, 115, 91, 0.8);
+$app-yellow-overlay: rgba(159, 167, 58, 0.8);
+
+@import '../Base/Font';
+@import '../Base/Other';
+@import '../Base/Spacing';

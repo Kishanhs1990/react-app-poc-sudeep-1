@@ -1,0 +1,26 @@
+@import '../Default/colors';
+
+$divider-width: 100% !default;
+$divider-height: 0 !default;
+$divider-max-height: 0 !default;
+$divider-border-size: 0 !default;
+
+$divider-border-top-size: 1px !default;
+$divider-border-top-color: $app-bdr-reg !default;
+$divider-border-top-color-grey: $app-bdr-grey !default;
+
+.divider,
+%divider {
+  border: $divider-border-size;
+  border-top: $divider-border-top-size solid $divider-border-top-color;
+  display: block;
+  height: $divider-height;
+  max-height: $divider-max-height;
+  width: $divider-width;
+}
+
+.divider-grey,
+%divider-grey {
+  @extend %divider;
+  border-top: $divider-border-top-size solid $divider-border-top-color-grey;
+}
