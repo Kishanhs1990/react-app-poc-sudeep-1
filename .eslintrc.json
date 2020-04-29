@@ -1,0 +1,138 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jsx-a11y"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "required": {
+          "every": ["id"]
+        },
+        "allowChildren": true
+      }
+    ],
+    "constructor-super": "warn",
+    "import/imports-first": ["error", "absolute-first"],
+    "import/newline-after-import": "error",
+    "indent": [
+      "warn",
+      2,
+      {
+        "SwitchCase": 1,
+        "ignoredNodes": [
+          "JSXElement",
+          "JSXElement > *",
+          "JSXAttribute",
+          "JSXIdentifier",
+          "JSXNamespacedName",
+          "JSXMemberExpression",
+          "JSXSpreadAttribute",
+          "JSXExpressionContainer",
+          "JSXOpeningElement",
+          "JSXClosingElement",
+          "JSXText",
+          "JSXEmptyExpression",
+          "JSXSpreadChild"
+        ]
+      }
+    ],
+    "no-const-assign": "warn",
+    "no-extra-semi": "error",
+    "no-this-before-super": "warn",
+    "no-undef": "warn",
+    "no-underscore-dangle": 0,
+    "no-unreachable": "warn",
+    "no-unused-vars": "warn",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/scripts/*.js",
+          "**/config/*.js",
+          "**/*.test.js",
+          "**/*.test.jsx",
+          "**/*Tests.js",
+          "**/Tests*.js"
+        ]
+      }
+    ],
+    "react/no-array-index-key": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/no-unused-state": 1,
+    "react/jsx-indent": [
+      2,
+      2,
+      {
+        "indentLogicalExpressions": true
+      }
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 100
+      }
+    ],
+    "no-param-reassign": [
+      "warn",
+      {
+        "props": false
+      }
+    ],
+    "no-use-before-define": [
+      "warn",
+      {
+        "functions": false,
+        "classes": true,
+        "variables": false
+      }
+    ],
+    "prettier/prettier": "warn",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "react/prop-types": 0,
+    "semi": ["error", "always"],
+    "valid-typeof": "warn",
+    "new-cap": [
+      "error",
+      {
+        "newIsCap": false
+      }
+    ]
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "localStorage": true,
+    "FormData": true,
+    "FileReader": true,
+    "Blob": true,
+    "navigator": true,
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  }
+}
