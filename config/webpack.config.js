@@ -25,6 +25,7 @@ const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const DynamicCdnWebpackPlugin = require('dynamic-cdn-webpack-plugin');
 
 const postcssNormalize = require('postcss-normalize');
 
@@ -661,6 +662,32 @@ module.exports = function (webpackEnv) {
             reportFilename: '__bundle_analyzer_report.html',
             openAnalyzer: false
           }),
+      isEnvProduction &&
+        new DynamicCdnWebpackPlugin({
+          only: ['react', 'react-dom'],
+          disable: false,
+          verbose: true,
+          resolver: (packageName, packageVersion, options) => {
+            let env = options.env || 'production';
+            switch (packageName) {
+              case 'react':
+                return {
+                  name: packageName,
+                  var: 'React',
+                  url: `https://cdn.jsdelivr.net/npm/${packageName}@${packageVersion}/umd/react.${env}.min.js`,
+                  version: packageVersion
+                };
+              case 'react-dom':
+                return {
+                  name: packageName,
+                  var: 'ReactDOM',
+                  url: `https://cdn.jsdelivr.net/npm/${packageName}@${packageVersion}/umd/react-dom.${env}.min.js`,
+                  version: packageVersion
+                };
+            }
+            return null;
+          }
+        })
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell webpack to provide empty mocks for them so importing them works.
