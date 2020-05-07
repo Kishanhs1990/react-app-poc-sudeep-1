@@ -1,9 +1,13 @@
-import React from 'react';
+// import React from 'react';
+// const SelectContinentComponent = React.lazy(() =>
+//   import('../../Components/SelectContinent/SelectContinentComponent')
+// );
+// const NotFoundComponent = React.lazy(() =>
+// import('../../Components/NotFound/NotFoundComponent')
+// );
 
-const SelectContinentComponent = React.lazy(() =>
-  import('../../Components/SelectContinent/SelectContinentComponent')
-);
-const NotFoundComponent = React.lazy(() => import('../../Components/NotFound/NotFoundComponent'));
+import SelectContinentComponent from '../../Components/SelectContinent/SelectContinentComponent';
+import NotFoundComponent from '../../Components/NotFound/NotFoundComponent';
 
 const ContinentsSolutionRoutes = [
   {
