@@ -256,7 +256,28 @@ module.exports = function (webpackEnv) {
       // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
       splitChunks: {
         chunks: 'all',
-        name: false,
+        maxInitialRequests: Infinity,
+        minSize: 0,
+        cacheGroups: {
+          default: false,
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            enforce: true,
+            name(module) {
+              const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+              return `nm.${packageName.replace('@', '')}`;
+            }
+          },
+          // Merge all the CSS into one file
+          styles: {
+            name: 'styles',
+            test: /\.s?css$/,
+            chunks: 'all',
+            minChunks: 1,
+            reuseExistingChunk: true,
+            enforce: true
+          }
+        }
       },
       // Keep the runtime chunk separated to enable long term caching
       // https://twitter.com/wSokra/status/969679223278505985
