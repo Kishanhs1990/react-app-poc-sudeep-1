@@ -15,6 +15,7 @@
     "apollo-link-http": "^1.5.17",
     "apollo-link-state": "^0.4.2",
     "axios": "^0.19.2",
+    "browser-sync": "^2.26.7",
     "connected-react-router": "^6.8.0",
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
@@ -38,7 +39,10 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "lint": "node ./node_modules/.bin/sass-lint -c .sass-lint.yml -v && node ./node_modules/.bin/eslint -c .eslintrc.json .",
+    "lint-fix": "./node_modules/.bin/sass-lint-auto-fix -d && node ./node_modules/.bin/eslint -c .eslintrc.json --fix .",
+    "build-serve": "yarn run build && yarn run serve-build-folder",
+    "serve-build-folder": "./node_modules/.bin/browser-sync start --config .bs-config.js"
   },
   "eslintConfig": {
     "extends": "react-app"
