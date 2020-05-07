@@ -4,7 +4,7 @@ const configureWebFontService = () => {
   if (typeof webFontLoader !== 'undefined') {
     webFontLoader({
       google: {
-        families: ['Montserrat:400,500,700,700i,800'],
+        families: ['Jost:400,500,700,700i,800'],
       },
     });
   } else {

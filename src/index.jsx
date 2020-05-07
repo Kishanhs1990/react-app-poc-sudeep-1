@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import * as sw from './Services/serviceWorker';
 import AppComponent from './Components/App/AppComponent';
 import configureStore from './Store/ConfigureStore';
-// import configureWebFontService from './Services/WebFontService';
+import configureWebFontService from './Services/WebFontService';
 
 const { store, history } = configureStore();
 
@@ -14,7 +14,7 @@ const { store, history } = configureStore();
 // console.log(`${process.env.PROJECT_VERSION}:${process.env.REACT_APP_ENV}`);
 
 // if (process.env.REACT_APP_ENV === 'Development') {
-// configureWebFontService();
+configureWebFontService();
 // }
 
 // Handling service worker registration
